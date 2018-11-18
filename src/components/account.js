@@ -4,17 +4,25 @@ import { fetchUsersServices } from '../actions';
 import ServiceCardListRow from './service_card_list_row.js';
 
 class Account extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            user :  this.props.user || JSON.parse(localStorage.getItem('loggedInUser')),
+        }  
+    }
+
     componentDidMount() {
-        this.props.fetchUsersServices(this.props.user._id);
+        this.props.fetchUsersServices(this.state.user._id);
     }
 
     render() {
-        if (!this.props.user)
+        if (!this.state.user)
             return <div>loading</div>
 
         return (
             <div className="container account">
-                <h1>Account - {this.props.user.lastName}</h1>
+                <h1>Account - {this.state.user.lastName}</h1>
                 <ServiceCardListRow services={this.props.services} ableToEdit={true}/>
             </div>
         );
