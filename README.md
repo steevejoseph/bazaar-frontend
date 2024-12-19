@@ -1,3 +1,8 @@
+# [DEPRECATED] Frontend Repository
+This repository has been merged into [Bazaar Backend](https://github.com/steevejoseph/bazaar-backend/).
+Please use that repository for all future development.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
